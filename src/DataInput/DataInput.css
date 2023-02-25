@@ -1,0 +1,102 @@
+.margenes {
+	margin: 0 auto;
+}
+
+.margenes input {
+	width: 25rem;
+	height: 3.2rem;
+	border-radius: 0.8rem;
+	background-color: var(--text-input-field);
+	border: none;
+	margin-top: 0.2rem;
+}
+
+.margenes input:hover {
+	border: 0.1rem solid var(--hospital-green);
+}
+
+.margenes p {
+	width: 25rem;
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* CÓDIGO PARA LA TABLA DE DATOS */
+
+.container-botones-filas {
+	width: 30rem;
+	margin: auto;
+}
+
+.tabla_de_valores {
+	text-align: center;
+	border: 0.3rem solid var(--hospital-green);
+	border-radius: 0.8rem;
+}
+
+.datos {
+	margin: 0 auto 1rem;
+}
+
+.datos th,td {
+	text-align: center;
+}
+
+.cabecera_tabla th {
+	background: var(--hospital-green);
+	font-weight: normal;
+}
+
+.cabecera_tabla th { /* Le asigno un ancho a todas las columnas del encabezado de la tabla */
+	width: 4.8rem;
+}
+
+.datos td:nth-child(4), th:nth-child(4) {
+	width: 1rem; /* Le asigno un ancho específico a una columna específica (central), superponiendo la orden general anterior */
+	background-color: var(--white);
+	border-top: 0.1rem solid var(--white);
+	border-bottom: 0.1rem solid var(--white);
+}
+
+.cabecera_tabla > tr {
+	line-height: 1.5rem;
+}
+
+#cuerpotabla > tr { /*Para que no se desplace la tabla con el hover*/
+	height: 2.1rem;
+}
+
+#cuerpotabla {
+	background: var(--text-input-field);
+}
+
+#cuerpotabla input {
+	border: none; /* Quita el borde de todos los inputs del body de la tabla */
+	width: 4.8rem; /* Mismo tamaño de la cabecera*/
+}
+
+#cuerpotabla input:hover {
+	border: 0.1rem solid var(--black);
+}
+
+@media (min-width: 600px) {
+    .cabecera_tabla th{ /* Le asigno un ancho a todas las columnas del encabezado de la tabla */
+        width: 9rem;
+    }
+    
+    .container-botones-filas { /* Hacer el div del mismo ancho que la tabla */
+        width: 54.4rem;
+    }
+    
+    .datos td:nth-child(4), th:nth-child(4){
+        width: 1rem; /* Le asigno un ancho específico a una columna específica, superponiendo la orden general anterior */
+    }
+    #cuerpotabla input {
+        border: 0;
+        width: 9rem; /* Mismo tamaño de la cabecera*/
+    }
+    #tabla_rev td{
+        width: 7rem;
+    }
+}
