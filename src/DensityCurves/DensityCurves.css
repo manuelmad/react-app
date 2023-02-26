@@ -1,0 +1,165 @@
+.grafica {
+	text-align: center;	
+}
+
+.opciones_graf {
+	border: 0.3rem solid var(--hospital-green);
+	border-radius: 0.8rem;
+}
+
+.trazado-lineas {
+	border: 0.3rem solid var(--hospital-green);
+	border-radius: 0.8rem;
+}
+
+.opciones_graf input {
+	width: 25rem;
+	height: 3.2rem;
+	border-radius: 0.8rem;
+	background-color: var(--text-input-field);
+	border: none;
+	margin-top: 0.2rem;
+}
+
+.opciones_graf input:hover {
+	border: 0.1rem solid var(--hospital-green);
+}
+
+.opciones_graf p {
+	width: 25rem;
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.opciones_graf .titulo-opciones-grafica {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.opciones_graf .botones-curvas { /* Puse 2 clases para mayor especificidad que la regla de arriba*/
+	text-align: center;
+}
+
+canvas {
+	margin-top: 1rem;
+}
+
+#mostrar_ocultar_auto, #mostrar_ocultar_manual {
+	height: 1.5rem;
+	width: 12rem;
+	background-color: var(--hospital-green);
+	border: 0.1rem solid var(--hospital-green);
+	border-radius: 0.8rem;
+	cursor: pointer;
+}
+
+#mostrar_ocultar_auto:active, #mostrar_ocultar_manual:active { /* active tiene que ir despues del hover para que funcione */
+	background-color: var(--very-light-gray);
+	border: 0.1rem solid var(--very-light-gray);
+}
+
+.datos_auto {
+	margin: auto auto;
+}
+
+.datos_auto input {
+	width: 25rem;
+	height: 3.2rem;
+	border-radius: 0.8rem;
+	background-color: var(--text-input-field);
+	border: none;
+	margin-top: 0.2rem;
+}
+
+.datos_auto input:hover {
+	border: 1px solid var(--hospital-green);
+}
+
+.datos_auto p {
+	width: 25rem;
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.datos_auto .botones-lineas { /*Apliqué mayor especificida que la regla de arriba*/
+	text-align: center;
+}
+
+.tabla_rev {
+	margin-top: 1rem;
+}
+
+#tabla_rev{
+	margin: 0 auto;
+}
+
+#tabla_rev td {
+	width: 6rem;
+}
+
+.tabla_rev_fila1 td {
+	background: var(--hospital-green);
+}
+
+.container-aviso-num-rev {
+	color: red;
+	width: 30rem;
+	margin: auto;
+	text-align: justify;
+}
+
+.div_tablas {
+	margin: auto;
+}
+
+.coord {
+	width: 6rem;
+}
+
+.tabla_lineas_manuales {
+	margin: 1rem auto 1rem;
+}
+
+.tabla_lineas_manuales input {
+	border: none;
+}
+
+.tabla_lineas_manuales input:hover {
+	border: 0.1rem solid var(--black);
+}
+
+.tabla_lineas_manuales tr:first-child,
+.tabla_lineas_manuales tr:nth-child(2) {
+	background: var(--hospital-green);
+}
+
+.tabla_lineas_manuales tr td:last-child {
+	background: var(--white);
+	border: 0.1rem solid var(--white);
+}
+
+#deshacer2 {
+	margin-bottom: 1rem;
+}
+
+.tabla_lineas_manuales button {
+	height: 2rem;
+	font-size: 1rem;
+	margin-left: 0.2rem;
+}
+
+@media (min-width: 600px) {
+    #tabla_rev td{
+        width: 7rem;
+    }
+    
+    .container-aviso-num-rev {
+        width: 35rem;
+    }
+    
+    .coord{
+        width: 10rem;
+    }
+}

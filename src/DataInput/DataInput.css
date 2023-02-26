@@ -81,6 +81,7 @@
 }
 
 @media (min-width: 600px) {
+
     .cabecera_tabla th{ /* Le asigno un ancho a todas las columnas del encabezado de la tabla */
         width: 9rem;
     }

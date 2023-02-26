@@ -6,8 +6,12 @@
 
 html {
 	/*font-family: 'Quicksand', sans-serif;*/
-    font-family: 'Roboto Condensed', sans-serif;
+    /* font-family: 'Roboto Condensed', sans-serif; */
 	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 :root {
@@ -24,7 +28,7 @@ html {
 	--lg: 1.8rem;
 }
 
-.calculos {
+section {
 	margin: 0 auto;
 	width: 97%;
 	min-width: 31rem;
@@ -65,4 +69,16 @@ label, p {
 
 button {
 	cursor: pointer;
+}
+
+@media (min-width: 600px) {
+	section {
+		max-width: 65rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	section {
+		max-width: 80rem;
+	}
 }

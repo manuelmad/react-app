@@ -1,6 +1,6 @@
 import React from 'react';
 import './DataInput.css';
-import { cabecera_1, cabecera_2, cabecera_3, cabecera_4, cabecera_5, cabecera_6 } from './features';
+import { cabecera_1, cabecera_2, cabecera_3, cabecera_4, cabecera_5, cabecera_6, agregarFila, eliminarFila } from './features';
 
 function DataInput() {
     return(
@@ -13,7 +13,7 @@ function DataInput() {
             <div className="container-botones-filas">
                 <h2>TABLAS DE VALORES</h2>
                 <p>
-                    <button id="agregar_fila" title="Agregar fila">Agregar fila</button> <button id="eliminar_fila" title="Eliminar fila">Eliminar fila</button>
+                    <button id="agregar_fila" title="Agregar fila" onClick={agregarFila}>Agregar fila</button> <button id="eliminar_fila" title="Eliminar fila" onClick={eliminarFila}>Eliminar fila</button>
                 </p>
             </div>
             <div>
