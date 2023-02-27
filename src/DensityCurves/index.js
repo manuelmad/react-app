@@ -1,7 +1,10 @@
 import React from 'react';
 import './DensityCurves.css';
+import { ancho_canvas, alto_canvas } from './features';
+// import { canvasInicial } from '../DrawingFunctions';
 
 function DensityCurves() {
+    
     return(
         <section className="grafica">
             <div className="opciones_graf">
@@ -10,7 +13,7 @@ function DensityCurves() {
                 <p><label htmlFor="max_den_graf">Máximo valor del eje X (lpg.):</label><br/><input type="number" id="max_den_graf" /></p>
                 <p><label htmlFor="max_prof_graf">Máximo valor del eje Y (pies):</label><br/><input type="number" id="max_prof_graf" /></p>
                 <p className="botones-curvas"><button id = "botoncito">Trazar Curvas</button> <button id = "borrar_curvas">Borrar Curvas</button></p>	
-                <canvas id="Prof_vs_Dens"></canvas>
+                <canvas width={ancho_canvas} height={alto_canvas} id="Prof_vs_Dens"></canvas>
             </div>
             
             <div className="trazado-lineas">
@@ -117,5 +120,6 @@ function DensityCurves() {
 		</section>
     );
 }
+
 
 export { DensityCurves };
