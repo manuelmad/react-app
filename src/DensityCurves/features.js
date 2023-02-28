@@ -1,3 +1,6 @@
+import { datos_auto } from ".";
+import { div_tablas } from ".";
+
 /* CANVAS */
 
 // Variables
@@ -20,4 +23,31 @@ else if(tamano_ventana >= 1024) {
 	alto_canvas = 720;
 }
 
-export { tamano_ventana, ancho_canvas, alto_canvas };
+
+/* BOTÓN PARA MOSTRAR / OCULTAR DISEÑO AUTOMÁTICO */
+const mostrarOcultarAuto = () => {
+
+	if(datos_auto.style.display === "none")
+	{
+		datos_auto.style.display = "block";
+	}
+	else if(datos_auto.style.display === "block")
+	{
+		datos_auto.style.display = "none";
+	}
+}
+
+/* BOTÓN PARA MOSTRAR / OCULTAR DISEÑO MANUAL */
+const mostrarOcultarManual = () => {
+
+	if(div_tablas.style.display === "none")
+	{
+		div_tablas.style.display = "block";
+	}
+	else if(div_tablas.style.display === "block")
+	{
+		div_tablas.style.display = "none";
+	}
+}
+
+export { tamano_ventana, ancho_canvas, alto_canvas, mostrarOcultarAuto, mostrarOcultarManual };

@@ -1,7 +1,13 @@
 import React from 'react';
 import './DensityCurves.css';
-import { ancho_canvas, alto_canvas } from './features';
+import { ancho_canvas, alto_canvas, mostrarOcultarAuto, mostrarOcultarManual } from './features';
+import arrow_down from './images/caret-down.svg';
 // import { canvasInicial } from '../DrawingFunctions';
+let datos_auto = document.getElementById("datos_auto");
+datos_auto.style.display = "none";
+
+let div_tablas = document.getElementById("div_tablas");
+div_tablas.style.display = "none";
 
 function DensityCurves() {
     
@@ -19,7 +25,7 @@ function DensityCurves() {
             <div className="trazado-lineas">
                 <h2>TRAZAR LÍNEAS DE DISEÑO</h2>
                 <p>TRAZADO AUTOMÁTICO</p>
-                <p><button id="mostrar_ocultar_auto"><img src="./imagenes/caret-down.svg" alt='arrow-down' /></button></p>
+                <p><button id="mostrar_ocultar_auto" onClick={mostrarOcultarAuto}><img src={arrow_down} alt='arrow-down' /></button></p>
                 <div className = "datos_auto" id="datos_auto">
                     <p><label htmlFor="PT">Profundidad Total (pies):</label><br/><input id="PT" type="number" /></p>
                     <p><label htmlFor="DLaPT">Dendidad de Lodo a P.T. (lpg.):</label><br/><input id="DLaPT" type="number" /></p>
@@ -45,7 +51,7 @@ function DensityCurves() {
                     </div>
                 </div>
                 <p id = "instruccion2">TRAZADO MANUAL</p>
-                <p><button id="mostrar_ocultar_manual"><img src="./imagenes/caret-down.svg" alt='arrow-down' /></button></p>
+                <p><button id="mostrar_ocultar_manual" onClick={mostrarOcultarManual}><img src={arrow_down} alt='arrow-down' /></button></p>
                 <div className="div_tablas" id="div_tablas">
                     <table className = "tabla_lineas_manuales">
                         <tbody>
@@ -122,4 +128,4 @@ function DensityCurves() {
 }
 
 
-export { DensityCurves };
+export { DensityCurves, datos_auto, div_tablas };

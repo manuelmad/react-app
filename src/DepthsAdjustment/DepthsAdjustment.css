@@ -1,0 +1,92 @@
+.ajuste_int, .ajuste_sup {
+	margin-bottom: 1rem;
+	text-align: center;
+	border: 0.3rem solid var(--hospital-green);
+	border-radius: 0.8rem;
+}
+
+.ajuste_int1, .ajuste_sup1 {
+	padding-bottom: 1rem;
+}
+
+.ajuste_int1 p:last-child, .ajuste_sup1 p:last-child {
+	text-align: center;
+}
+
+.ajuste_int1 input, .ajuste_sup1 input {
+	width: 25rem;
+	height: 3.2rem;
+	border-radius: 0.8rem;
+	background-color: var(--text-input-field);
+	border: none;
+	margin-top: 0.2rem;
+}
+
+.ajuste_int1 input:hover, .ajuste_sup1 input:hover {
+	border: 0.1rem solid var(--hospital-green);
+}
+
+.ajuste_int1 p, .ajuste_sup1 p {
+	width: 25rem;
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#tituloPMP, #tituloDEMP {
+	text-align: justify;
+}
+
+.ajuste_int1 .boton_ajuste_int {
+	text-align: center;
+}
+
+.ajuste_int2, .ajuste_sup2 {
+	padding-bottom: 1rem;
+}
+
+#resultadoI, #resultadoS {
+	display: block;
+	width: 90%;
+	border-radius: 0.8rem;
+	margin: 1rem auto 1rem;
+	padding: 1rem 0.5rem;
+	text-align: left;
+	background-color: var(--text-input-field);
+	min-height: 30rem;
+}
+
+@media (min-width: 1024px) {
+    .ajuste_int, .ajuste_sup {
+        display: flex;
+    }
+    
+    .ajuste_int1, .ajuste_sup1 {
+        width: 30%;
+    }
+    
+    .ajuste_int2, .ajuste_sup2 {
+        flex-grow: 1;
+    }
+    
+    .ajuste_int1 p, .ajuste_sup1 p {
+        width: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .ajuste_int1 h2, .ajuste_sup1 h2 {
+        width: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: justify;
+    }
+    
+    .ajuste_int1 input, .ajuste_sup1 input {
+        width: 20rem;
+    }
+    
+    #resultadoI, #resultadoS {
+        max-width: 50rem;
+    }
+}
