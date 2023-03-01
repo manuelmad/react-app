@@ -1,37 +1,73 @@
 import React from 'react';
 import './DensityCurves.css';
-import { ancho_canvas, alto_canvas, mostrarOcultarAuto, mostrarOcultarManual } from './features';
 import arrow_down from './images/caret-down.svg';
 // import { canvasInicial } from '../DrawingFunctions';
-let datos_auto = document.getElementById("datos_auto");
-datos_auto.style.display = "none";
 
-let div_tablas = document.getElementById("div_tablas");
-div_tablas.style.display = "none";
 
-function DensityCurves() {
+function DensityCurves(props) {
     
+    // Función para cambiar el estado del display de trazado automático
+    const mostrarOcultarAuto = () => {
+        if(props.displayAuto === 'none') {
+            props.setDisplayAuto('block');
+        } else if(props.displayAuto === 'block') {
+            props.setDisplayAuto('none');
+        }
+    }
+    const stylesAuto = {
+        display: props.displayAuto
+    }
+
+    
+     // Función para cambiar el estado del display de trazado automático
+    const mostrarOcultarManual = () => {
+        if(props.displayManual === 'none') {
+            props.setDisplayManual('block');
+        } else if(props.displayManual === 'block') {
+            props.setDisplayManual('none');
+        }
+    }
+    const stylesManual = {
+        display: props.displayManual
+    }
+
+    // Función para establecer dimensiones del canvas. La llamaré cuando cargue el section que contiene a todos los elementos
+    const setSize = () => {
+        if(props.tamano_ventana < 600) {
+            props.setCanvasSizeX(280);
+            props.setCanvasSizeY(280);
+        }
+        else if(props.tamano_ventana >= 600 && props.tamano_ventana < 1024) {
+            props.setCanvasSizeX(550);
+            props.setCanvasSizeY(550);
+        }
+        else if(props.tamano_ventana >= 1024) {
+            props.setCanvasSizeX(720);
+            props.setCanvasSizeY(720);
+        }
+    }
+
     return(
-        <section className="grafica">
+        <section className="grafica" onLoad={setSize}>
             <div className="opciones_graf">
-                <h2>TRAZAR CURVAS DE DENSIDAD</h2>
-                <p className="titulo-opciones-grafica">Opciones de ejes del gráfico:</p>
-                <p><label htmlFor="max_den_graf">Máximo valor del eje X (lpg.):</label><br/><input type="number" id="max_den_graf" /></p>
-                <p><label htmlFor="max_prof_graf">Máximo valor del eje Y (pies):</label><br/><input type="number" id="max_prof_graf" /></p>
-                <p className="botones-curvas"><button id = "botoncito">Trazar Curvas</button> <button id = "borrar_curvas">Borrar Curvas</button></p>	
-                <canvas width={ancho_canvas} height={alto_canvas} id="Prof_vs_Dens"></canvas>
+                <h2>{props.title}</h2>
+                <p className="titulo-opciones-grafica">{props.subtitle1}</p>
+                <p><label htmlFor="max_den_graf">{props.input1text}</label><br/><input type="number" id="max_den_graf" /></p>
+                <p><label htmlFor="max_prof_graf">{props.input2text}</label><br/><input type="number" id="max_prof_graf" /></p>
+                <p className="botones-curvas"><button id = "botoncito">{props.drawCurvesButtonText}</button> <button id = "borrar_curvas">{props.eraseCurvesButtonText}</button></p>	
+                <canvas width={props.canvasSizeX} height={props.canvasSizeY} id="Prof_vs_Dens"></canvas>
             </div>
             
             <div className="trazado-lineas">
-                <h2>TRAZAR LÍNEAS DE DISEÑO</h2>
-                <p>TRAZADO AUTOMÁTICO</p>
+                <h2>{props.title2}</h2>
+                <p>{props.subtitle2}</p>
                 <p><button id="mostrar_ocultar_auto" onClick={mostrarOcultarAuto}><img src={arrow_down} alt='arrow-down' /></button></p>
-                <div className = "datos_auto" id="datos_auto">
-                    <p><label htmlFor="PT">Profundidad Total (pies):</label><br/><input id="PT" type="number" /></p>
-                    <p><label htmlFor="DLaPT">Dendidad de Lodo a P.T. (lpg.):</label><br/><input id="DLaPT" type="number" /></p>
-                    <p className="botones-lineas"><button id = "lineas_auto">Trazar Líneas</button> <button id = "deshacer">Borrar Líneas</button></p>
+                <div className = "datos_auto" id="datos_auto" style={stylesAuto}>
+                    <p><label htmlFor="PT">{props.input3text}</label><br/><input id="PT" type="number" /></p>
+                    <p><label htmlFor="DLaPT">{props.input4text}</label><br/><input id="DLaPT" type="number" /></p>
+                    <p className="botones-lineas"><button id = "lineas_auto">{props.drawLinesButtonText}</button> <button id = "deshacer">{props.eraseLinesButtonText}</button></p>
                     <div className = "tabla_rev">
-                        <h2>TABLA DE REVESTIDORES</h2>
+                        <h2>{props.title3}</h2>
                         <div>
                             <table id = "tabla_rev">
                                 <tbody>
@@ -50,9 +86,9 @@ function DensityCurves() {
                         </div>
                     </div>
                 </div>
-                <p id = "instruccion2">TRAZADO MANUAL</p>
+                <p id = "instruccion2">{props.subtitle3}</p>
                 <p><button id="mostrar_ocultar_manual" onClick={mostrarOcultarManual}><img src={arrow_down} alt='arrow-down' /></button></p>
-                <div className="div_tablas" id="div_tablas">
+                <div className="div_tablas" id="div_tablas" style={stylesManual}>
                     <table className = "tabla_lineas_manuales">
                         <tbody>
                             <tr>
@@ -120,7 +156,7 @@ function DensityCurves() {
                             </tr>
                         </tbody>
                     </table>
-                    <p><button id = "deshacer2">Borrar Líneas</button></p>
+                    <p><button id = "deshacer2">{props.eraseLinesButtonText}</button></p>
                 </div>
             </div>
 		</section>
@@ -128,4 +164,4 @@ function DensityCurves() {
 }
 
 
-export { DensityCurves, datos_auto, div_tablas };
+export { DensityCurves };
