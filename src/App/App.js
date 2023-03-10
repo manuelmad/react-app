@@ -16,6 +16,13 @@ function App() {
   const [canvasSizeX, setCanvasSizeX] = React.useState('');
   const [canvasSizeY, setCanvasSizeY] = React.useState('');
 
+  // Estados para establecer los valores de los inputs en Depths Adjustments
+  const [pna, setPna] = React.useState('');
+  const [pzp, setPzp] = React.useState('');
+  const [dzp, setDzp] = React.useState('');
+  const [pri, setPri] = React.useState('');
+  const [dzi, setDzi] = React.useState('');
+
   return (
     <React.Fragment>
       <DataInput
@@ -56,6 +63,16 @@ function App() {
         name="AJUSTE DE LAS PROFUNDIDADES DE ASENTAMIENTO DE LOS REVESTIDORES"
         title="ANÁLISIS DE POSIBLE PEGA DIFERENCIAL"
         title2="ANÁLISIS DE POSIBLE FRACTURA POR ARREMETIDA"
+        pna={pna}
+        setPna={setPna}
+        pzp={pzp}
+        setPzp={setPzp}
+        dzp={dzp}
+        setDzp={setDzp}
+        pri={pri}
+        setPri={setPri}
+        dzi={dzi}
+        setDzi={setDzi}
       />
       <Cleaning />
     </React.Fragment>

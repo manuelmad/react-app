@@ -1,7 +1,9 @@
 import React from "react";
 import './DepthsAdjustment.css';
+import { AnalisisIntermedio } from './features.js'
 
 function DepthsAdjustment(props) {
+
     return(
         <section className="calculos">
 			<h1 id="titulo-ajuste">{props.name}</h1>
@@ -9,23 +11,23 @@ function DepthsAdjustment(props) {
 				<div className="ajuste_int1">
 					<h2>{props.title}</h2>
 					<p>Profundidad donde la presión cambia de normal a anormal (Densidad de Poro = 9 lpg.) (pies):<br/>
-					<input type="number" id="PNA" /></p>
+					<input value={props.pna} onChange={event => {props.setPna(event.target.value)}} type="number" id="PNA" /></p>
 
 					<p id="tituloPMP">Profundidad de la formación más propensa a causar pega diferencial del revestidor evaluado (pies):<br/>
-					<input type="number" id="Valor_tituloPMP"></input></p>
+					<input value={props.pzp} onChange={event => {props.setPzp(event.target.value)}} type="number" id="Valor_tituloPMP"></input></p>
 
 					<p id="tituloDEMP">Densidad de Poro Equivalente a dicha profundidad (lpg.):<br/>
-					<input type="number" id="Valor_tituloDEMP"></input></p>
+					<input value={props.dzp} onChange={event => {props.setDzp(event.target.value)}} type="number" id="Valor_tituloDEMP"></input></p>
 
 					<p><strong>REVESTIDOR A EVEALUAR:</strong></p>
 
 					<p>Profundidad de Asentamiento (pies):<br/>
-					<input type="number" id="PRI" /></p>
+					<input value={props.pri} onChange={event => {props.setPri(event.target.value)}} type="number" id="PRI" /></p>
 					
 					<p>Densidad de Lodo en Zapata (lpg):<br/>
-					<input type="number" id="DZI" /></p>
+					<input value={props.dzi} onChange={event => {props.setDzi(event.target.value)}} type="number" id="DZI" /></p>
 				
-					<p className="boton_ajuste_int"><button id="boton_ajuste_int">Realizar Análisis</button></p>
+					<p className="boton_ajuste_int"><button id="boton_ajuste_int" onClick={()=>AnalisisIntermedio(props.pna, props.pzp, props.dzp, props.pri, props.dzi)}>Realizar Análisis</button></p>
 				</div>
 				<div className="ajuste_int2">
 					<p><strong>RESULTADO ANÁLISIS PEGA DIFERENCIAL:</strong><span id="resultadoI"></span></p>
