@@ -1,6 +1,7 @@
 import React from "react";
 import './DepthsAdjustment.css';
-import { AnalisisIntermedio } from './features.js'
+import { AnalisisIntermedio } from './stuckPipeRisk.js';
+import { AnalisisSuperficial } from "./blowoutRisk.js";
 
 function DepthsAdjustment(props) {
 
@@ -38,15 +39,15 @@ function DepthsAdjustment(props) {
 					<h2>{props.title2}</h2>
 					<p><strong>REVESTIDOR SUPERFICIAL:</strong></p>
 					<p>Profundidad de Asentamiento (pies):<br/>
-					<input type="number" id="PRS" /></p>
+					<input value={props.prs} onChange={event => {props.setPrs(event.target.value)}} type="number" id="PRS" /></p>
 					<p>Densidad de Fractura Equivalente en Zapata (lpg.):<br/>
-					<input type="number" id="DFES" /></p>
+					<input value={props.des} onChange={event => {props.setDes(event.target.value)}} type="number" id="DFES" /></p>
 					<p><strong>PRÓXIMO HOYO:</strong></p>
 					<p>Profundidad de Asentamiento del próximo revestidor (pies):<br/>
-					<input type="number" id="PProxR" /></p>
+					<input value={props.ppr} onChange={event => {props.setPpr(event.target.value)}} type="number" id="PProxR" /></p>
 					<p>Densidad de Lodo en Zapata del próximo revestidor (lpg):<br/>
-					<input type="number" id="DProxR" /></p>
-					<p><button id="boton_ajuste_sup">Realizar Análisis</button></p>
+					<input value={props.dpr} onChange={event => {props.setDpr(event.target.value)}} type="number" id="DProxR" /></p>
+					<p><button onClick={()=>AnalisisSuperficial(props.prs, props.des, props.ppr, props.dpr)} id="boton_ajuste_sup">Realizar Análisis</button></p>
 				</div>
 				<div className="ajuste_sup2">
 					<p><strong>RESULTADO ANÁLISIS REVESTIDOR SUPERFICIAL:</strong><span id="resultadoS"></span></p>

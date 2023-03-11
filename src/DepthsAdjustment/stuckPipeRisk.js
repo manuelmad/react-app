@@ -3,19 +3,19 @@
 const AnalisisIntermedio = (a, b, c, d, e) => {
 	// VARIABLES //
 
-    let Prof_Normal_Anormal = a;
+    let Prof_Normal_Anormal = Number(a);
     console.log(Prof_Normal_Anormal);
 
-    let Prof_Zona_Propensa = b;
+    let Prof_Zona_Propensa = Number(b);
     console.log(Prof_Zona_Propensa);
 
-	let Densidad_Eq_Zona_Propensa = c;
+	let Densidad_Eq_Zona_Propensa = Number(c);
     console.log(Densidad_Eq_Zona_Propensa);
 
-    let Prof_Rev_Int = d;
+    let Prof_Rev_Int = Number(d);
     console.log(Prof_Rev_Int);
 
-	let Densidad_Zap_Int = e;
+	let Densidad_Zap_Int = Number(e);
     console.log(Densidad_Zap_Int);
 
 	let Delta_Presion_Teorico;

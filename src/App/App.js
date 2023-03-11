@@ -17,11 +17,18 @@ function App() {
   const [canvasSizeY, setCanvasSizeY] = React.useState('');
 
   // Estados para establecer los valores de los inputs en Depths Adjustments
+  // Rev. Intermedio
   const [pna, setPna] = React.useState('');
   const [pzp, setPzp] = React.useState('');
   const [dzp, setDzp] = React.useState('');
   const [pri, setPri] = React.useState('');
   const [dzi, setDzi] = React.useState('');
+
+   // Rev. Superficial
+   const [prs, setPrs] = React.useState('');
+   const [des, setDes] = React.useState('');
+   const [ppr, setPpr] = React.useState('');
+   const [dpr, setDpr] = React.useState('');
 
   return (
     <React.Fragment>
@@ -73,6 +80,14 @@ function App() {
         setPri={setPri}
         dzi={dzi}
         setDzi={setDzi}
+        prs={prs}
+        setPrs={setPrs}
+        des={des}
+        setDes={setDes}
+        ppr={ppr}
+        setPpr={setPpr}
+        dpr={dpr}
+        setDpr={setDpr}
       />
       <Cleaning />
     </React.Fragment>
